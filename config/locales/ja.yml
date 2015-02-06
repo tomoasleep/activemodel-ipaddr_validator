@@ -1,0 +1,4 @@
+ja:
+  errors:
+    messages:
+      invalid_ipaddr: の形式が正しくありません。
