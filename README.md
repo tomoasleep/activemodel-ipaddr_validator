@@ -1,4 +1,4 @@
-# activemodel-ipaddr_validator
+# activemodel-ipaddr_validator [![Build Status](https://travis-ci.org/increments/activemodel-ipaddr_validator.svg?branch=master)](https://travis-ci.org/increments/activemodel-ipaddr_validator)
 
 ## Usage
 
@@ -35,7 +35,7 @@ serialize :ipv6s_attribute, Array
 
 ## Validation outside a model
 
-If you need to validate a IP outside a model, you can do that:
+If you need to validate an IP outside a model, you can do that:
 
 ```rb
 IpaddrValidator.valid?(value, options)
