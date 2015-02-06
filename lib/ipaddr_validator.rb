@@ -36,4 +36,10 @@ class IpaddrValidator < ActiveModel::EachValidator
       false
     end
   end
+
+  def validate_each(record, attribute, value)
+    unless self.class.valid?(value, options)
+      record.errors.add(attribute, options[:message] || :invalid_ipaddr)
+    end
+  end
 end
