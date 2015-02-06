@@ -1,4 +1,7 @@
-# activemodel-ipaddr_validator [![Build Status](https://travis-ci.org/increments/activemodel-ipaddr_validator.svg?branch=master)](https://travis-ci.org/increments/activemodel-ipaddr_validator)
+# activemodel-ipaddr_validator
+
+[![Build Status](https://travis-ci.org/increments/activemodel-ipaddr_validator.svg?branch=master)](https://travis-ci.org/increments/activemodel-ipaddr_validator) [![Code Climate](https://codeclimate.com/github/increments/activemodel-ipaddr_validator/badges/gpa.svg)](https://codeclimate.com/github/increments/activemodel-ipaddr_validator) [![Coverage Status](https://coveralls.io/repos/increments/activemodel-ipaddr_validator/badge.svg)](https://coveralls.io/r/increments/activemodel-ipaddr_validator) [![Dependency Status](https://gemnasium.com/increments/activemodel-ipaddr_validator.svg)](https://gemnasium.com/increments/activemodel-ipaddr_validator)
+
 
 ## Usage
 
