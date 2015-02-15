@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors         = ['Yuku Takahashi']
   spec.email           = ['yuku@qiita.com']
   spec.summary         = 'A IPv4 and IPv6 validator for Rails 3 and 4.'
-  spec.homepage        = 'https://github.com/increments/activemodel-ipaddr_validator'
+  spec.homepage        = 'https://github.com/yuku-t/activemodel-ipaddr_validator'
   spec.license         = 'MIT'
 
   spec.files           = `git ls-files -z`.split("\x0")
