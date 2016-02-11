@@ -23,7 +23,12 @@ class IpaddrValidator < ActiveModel::EachValidator
     private
 
     def validate_single_ipaddr(string, options)
-      ip = IPAddr.new(string)
+      ip =
+        if string.is_a?(IPAddr)
+          string
+        else
+           IPAddr.new(string)
+        end
       case
       when options[:ipv4] && ip.ipv4?
         true
