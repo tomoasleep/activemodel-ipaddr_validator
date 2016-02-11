@@ -62,87 +62,89 @@ describe IpaddrValidator do
       described_class.valid?(value, options)
     end
 
-    context 'when a valid IPv4 string is given', given: :ipv4 do
-      context 'and ipv4 option is true', ipv4: true do
+    context 'when strings are given' do
+      context 'when a valid IPv4 string is given', given: :ipv4 do
+        context 'and ipv4 option is true', ipv4: true do
+          context 'and array option is true', array: true do
+            it { should be_falsey }
+          end
+
+          context 'and array option is false', array: false do
+            it { should be_truthy }
+          end
+        end
+
+        context 'and ipv4 option is false', ipv4: false do
+          it { should be_falsey }
+        end
+      end
+
+      context 'when a valid IPv6 string is given', given: :ipv6 do
+        context 'and ipv6 option is true', ipv6: true do
+          context 'and array option is true', array: true do
+            it { should be_falsey }
+          end
+
+          context 'and array option is false', array: false do
+            it { should be_truthy }
+          end
+        end
+
+        context 'and ipv6 option is false', ipv6: false do
+          it { should be_falsey }
+        end
+      end
+
+      context 'when a valid IPv4 array is given', given: :ipv4_array do
+        context 'and ipv4 option is true', ipv4: true do
+          context 'and array option is true', array: true do
+            it { should be_truthy }
+          end
+
+          context 'and array option is false', array: false do
+            it { should be_falsey }
+          end
+        end
+
+        context 'and ipv4 option is false', ipv4: false do
+          it { should be_falsey }
+        end
+      end
+
+      context 'when a valid IPv6 array is given', given: :ipv6_array do
+        context 'and ipv6 option is true', ipv6: true do
+          context 'and array option is true', array: true do
+            it { should be_truthy }
+          end
+
+          context 'and array option is false', array: false do
+            it { should be_falsey }
+          end
+        end
+
+        context 'and ipv6 option is false', ipv6: false do
+          it { should be_falsey }
+        end
+      end
+
+      context 'when an invalid string is given', given: :invalid do
         context 'and array option is true', array: true do
           it { should be_falsey }
         end
 
         context 'and array option is false', array: false do
-          it { should be_truthy }
+          it { should be_falsey }
         end
       end
 
-      context 'and ipv4 option is false', ipv4: false do
-        it { should be_falsey }
-      end
-    end
-
-    context 'when a valid IPv6 string is given', given: :ipv6 do
-      context 'and ipv6 option is true', ipv6: true do
+      context 'when an invalid array is given', given: :invalid_array do
         context 'and array option is true', array: true do
           it { should be_falsey }
         end
 
         context 'and array option is false', array: false do
-          it { should be_truthy }
-        end
-      end
-
-      context 'and ipv6 option is false', ipv6: false do
-        it { should be_falsey }
-      end
-    end
-
-    context 'when a valid IPv4 array is given', given: :ipv4_array do
-      context 'and ipv4 option is true', ipv4: true do
-        context 'and array option is true', array: true do
-          it { should be_truthy }
-        end
-
-        context 'and array option is false', array: false do
           it { should be_falsey }
         end
-      end
-
-      context 'and ipv4 option is false', ipv4: false do
-        it { should be_falsey }
-      end
-    end
-
-    context 'when a valid IPv6 array is given', given: :ipv6_array do
-      context 'and ipv6 option is true', ipv6: true do
-        context 'and array option is true', array: true do
-          it { should be_truthy }
-        end
-
-        context 'and array option is false', array: false do
-          it { should be_falsey }
-        end
-      end
-
-      context 'and ipv6 option is false', ipv6: false do
-        it { should be_falsey }
-      end
-    end
-
-    context 'when an invalid string is given', given: :invalid do
-      context 'and array option is true', array: true do
-        it { should be_falsey }
-      end
-
-      context 'and array option is false', array: false do
-        it { should be_falsey }
-      end
-    end
-
-    context 'when an invalid array is given', given: :invalid_array do
-      context 'and array option is true', array: true do
-        it { should be_falsey }
-      end
-
-      context 'and array option is false', array: false do
-        it { should be_falsey }
       end
     end
   end
