@@ -11,8 +11,8 @@ class IpaddrValidator < ActiveModel::EachValidator
         else
           [value]
         end
-      array.all? do |string|
-        validate_single_ipaddr(string, options)
+      array.all? do |value|
+        validate_single_ipaddr(value, options)
       end
     end
 
@@ -22,12 +22,12 @@ class IpaddrValidator < ActiveModel::EachValidator
 
     private
 
-    def validate_single_ipaddr(string, options)
+    def validate_single_ipaddr(value, options)
       ip =
-        if string.is_a?(IPAddr)
-          string
+        if value.is_a?(IPAddr)
+          value
         else
-           IPAddr.new(string)
+           IPAddr.new(value)
         end
       case
       when options[:ipv4] && ip.ipv4?
