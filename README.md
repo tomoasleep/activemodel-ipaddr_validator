@@ -1,7 +1,9 @@
 # activemodel-ipaddr_validator
 
-[![Build Status](https://travis-ci.org/yuku-t/activemodel-ipaddr_validator.svg?branch=master)](https://travis-ci.org/yuku-t/activemodel-ipaddr_validator) [![Code Climate](https://codeclimate.com/github/yuku-t/activemodel-ipaddr_validator/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/activemodel-ipaddr_validator) [![Coverage Status](https://coveralls.io/repos/yuku-t/activemodel-ipaddr_validator/badge.svg)](https://coveralls.io/r/yuku-t/activemodel-ipaddr_validator) [![Dependency Status](https://gemnasium.com/yuku-t/activemodel-ipaddr_validator.svg)](https://gemnasium.com/yuku-t/activemodel-ipaddr_validator)
-
+[![Build Status](https://travis-ci.org/yuku-t/activemodel-ipaddr_validator.svg?branch=master)](https://travis-ci.org/yuku-t/activemodel-ipaddr_validator)
+[![Code Climate](https://codeclimate.com/github/yuku-t/activemodel-ipaddr_validator/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/activemodel-ipaddr_validator)
+[![Coverage Status](https://coveralls.io/repos/yuku-t/activemodel-ipaddr_validator/badge.svg)](https://coveralls.io/r/yuku-t/activemodel-ipaddr_validator)
+[![Dependency Status](https://gemnasium.com/yuku-t/activemodel-ipaddr_validator.svg)](https://gemnasium.com/yuku-t/activemodel-ipaddr_validator)
 
 ## Usage
 
@@ -17,10 +19,26 @@ Run:
 bundle install
 ```
 
-Then add the following to your model:
+Then register `ipaddr` validator to your model:
 
 ```rb
-validates :my_ipaddr_attribute, ipaddr: true
+class MyModel < ActiveRecord::Base
+  validates :my_ipaddr_attribute, ipaddr: true
+end
+
+instance = MyModel.new
+
+instance.my_ipaddr_attribute = '127.0.0.1'
+instance.valid?
+#=> true
+
+instance.my_ipaddr_attribute = 'hello world'
+instance.valid?
+#=> false
+
+instance.my_ipaddr_attribute = IPAddr.new('127.0.0.1')
+instance.valid?
+#=> true
 ```
 
 ### Custom options
